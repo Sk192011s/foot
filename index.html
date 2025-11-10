@@ -15,19 +15,6 @@
     table {
       font-size: 15px;
     }
-    th, td {
-      white-space: nowrap; /* Prevent line break in match column */
-    }
-    td.match {
-      min-width: 200px;  /* Expand match column */
-    }
-    td.date {
-      min-width: 110px;  /* Expand date column */
-    }
-    td.result img {
-      height: 30px;
-      vertical-align: middle;
-    }
     @media (max-width: 768px) {
       table {
         font-size: 13px;
@@ -52,32 +39,24 @@
               </tr>
             </thead>
             <tbody>
+              <!-- 🟢 Add your rows here daily -->
               <tr>
-                <td class="date">2025-11-10</td>
-                <td class="match">Manchester United vs Arsenal</td>
+                <td>2025-11-10</td>
+                <td>Man United vs Arsenal</td>
                 <td>Over 2.5 Goals</td>
-                <td class="result">
-                  <!-- Win GIF -->
-                  <img src="https://media.giphy.com/media/111ebonMs90YLu/giphy.gif" alt="Win">
-                </td>
+                <td>✅ Win</td>
               </tr>
               <tr>
-                <td class="date">2025-11-09</td>
-                <td class="match">Barcelona vs Real Madrid</td>
+                <td>2025-11-09</td>
+                <td>Barcelona vs Real Madrid</td>
                 <td>Both Teams to Score</td>
-                <td class="result">
-                  <!-- Lost icon -->
-                  ❌
-                </td>
+                <td>❌ Lost</td>
               </tr>
               <tr>
-                <td class="date">2025-11-08</td>
-                <td class="match">Juventus vs AC Milan</td>
+                <td>2025-11-08</td>
+                <td>Juventus vs AC Milan</td>
                 <td>Under 2.5 Goals</td>
-                <td class="result">
-                  <!-- Draw icon -->
-                  ⚪
-                </td>
+                <td>✅ Win</td>
               </tr>
             </tbody>
           </table>
