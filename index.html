@@ -14,33 +14,54 @@
     }
     table {
       font-size: 15px;
+      border-collapse: collapse;
+      width: 100%;
+    }
+    th, td {
+      border: 1px solid #dee2e6;
+      text-align: center;
+      padding: 8px;
+      white-space: nowrap;
+    }
+    thead th {
+      background: #343a40;
+      color: #fff;
+    }
+    tbody td {
+      background: transparent;
     }
 
     /* Win / Lost animations */
     .win, .lost {
-      font-weight: bold; /* bold for both */
+      font-weight: bold;
       animation: glow 1.5s infinite alternate;
     }
 
     .win {
-      color: orange; /* changed from red to orange */
+      color: orange;
     }
-
     .lost {
       color: black;
     }
 
-    /* Glow effect for both */
+    /* Glow animation with color enhancement */
     @keyframes glow {
       0% { text-shadow: 0 0 2px currentColor; }
-      50% { text-shadow: 0 0 8px currentColor; }
+      25% { text-shadow: 0 0 6px currentColor, 0 0 10px gold; }
+      50% { text-shadow: 0 0 8px currentColor, 0 0 12px gold; }
+      75% { text-shadow: 0 0 6px currentColor, 0 0 10px gold; }
       100% { text-shadow: 0 0 2px currentColor; }
     }
 
+    td.match { min-width: 200px; }
+    td.date { min-width: 110px; }
+
+    .table-responsive { overflow-x: auto; }
+
     @media (max-width: 768px) {
-      table {
-        font-size: 13px;
-      }
+      table { font-size: 13px; }
+      td.match { min-width: 150px; }
+      td.date { min-width: 90px; }
     }
   </style>
 </head>
@@ -51,8 +72,8 @@
     <div class="card shadow-sm">
       <div class="card-body">
         <div class="table-responsive">
-          <table class="table table-bordered table-hover text-center align-middle mb-0">
-            <thead class="table-dark">
+          <table class="table table-hover align-middle mb-0">
+            <thead>
               <tr>
                 <th>Date</th>
                 <th>Match</th>
@@ -62,20 +83,20 @@
             </thead>
             <tbody>
               <tr>
-                <td>2025-11-10</td>
-                <td>Man United vs Arsenal</td>
+                <td class="date">2025-11-10</td>
+                <td class="match">Man United vs Arsenal</td>
                 <td>Over 2.5 Goals</td>
                 <td class="win">WIN</td>
               </tr>
               <tr>
-                <td>2025-11-09</td>
-                <td>Barcelona vs Real Madrid</td>
+                <td class="date">2025-11-09</td>
+                <td class="match">Barcelona vs Real Madrid</td>
                 <td>Both Teams to Score</td>
                 <td class="lost">LOST</td>
               </tr>
               <tr>
-                <td>2025-11-08</td>
-                <td>Juventus vs AC Milan</td>
+                <td class="date">2025-11-08</td>
+                <td class="match">Juventus vs AC Milan</td>
                 <td>Under 2.5 Goals</td>
                 <td class="win">WIN</td>
               </tr>
