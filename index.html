@@ -18,33 +18,34 @@
       width: 100%;
     }
     th, td {
-      border: 1px solid #dee2e6;
+      border: 1px solid #dee2e6; /* only border, no background */
       text-align: center;
       padding: 8px;
       white-space: nowrap;
     }
     thead th {
-      background: #343a40;
-      color: #fff;
+      background: transparent;
+      color: black;
     }
     tbody td {
       background: transparent;
-    }
-
-    /* Win / Lost animations */
-    .win, .lost {
-      font-weight: bold;
-      animation: glow 1.5s infinite alternate;
-    }
-
-    .win {
-      color: orange;
-    }
-    .lost {
       color: black;
     }
 
-    /* Glow animation with color enhancement */
+    /* Win animation only */
+    .win {
+      font-weight: bold;
+      color: orange;
+      animation: glow 1.5s infinite alternate;
+    }
+
+    /* Lost plain */
+    .lost {
+      font-weight: bold;
+      color: black;
+      animation: none; /* animation off */
+    }
+
     @keyframes glow {
       0% { text-shadow: 0 0 2px currentColor; }
       25% { text-shadow: 0 0 6px currentColor, 0 0 10px gold; }
@@ -55,13 +56,19 @@
 
     td.match { min-width: 200px; }
     td.date { min-width: 110px; }
+    td.tip { min-width: 150px; }
+    td.result { min-width: 80px; }
 
-    .table-responsive { overflow-x: auto; }
+    .table-responsive {
+      overflow-x: hidden; /* scroll hide */
+    }
 
     @media (max-width: 768px) {
       table { font-size: 13px; }
       td.match { min-width: 150px; }
       td.date { min-width: 90px; }
+      td.tip { min-width: 120px; }
+      td.result { min-width: 60px; }
     }
   </style>
 </head>
@@ -71,38 +78,36 @@
 
     <div class="card shadow-sm">
       <div class="card-body">
-        <div class="table-responsive">
-          <table class="table table-hover align-middle mb-0">
-            <thead>
-              <tr>
-                <th>Date</th>
-                <th>Match</th>
-                <th>Tip</th>
-                <th>Result</th>
-              </tr>
-            </thead>
-            <tbody>
-              <tr>
-                <td class="date">2025-11-10</td>
-                <td class="match">Man United vs Arsenal</td>
-                <td>Over 2.5 Goals</td>
-                <td class="win">WIN</td>
-              </tr>
-              <tr>
-                <td class="date">2025-11-09</td>
-                <td class="match">Barcelona vs Real Madrid</td>
-                <td>Both Teams to Score</td>
-                <td class="lost">LOST</td>
-              </tr>
-              <tr>
-                <td class="date">2025-11-08</td>
-                <td class="match">Juventus vs AC Milan</td>
-                <td>Under 2.5 Goals</td>
-                <td class="win">WIN</td>
-              </tr>
-            </tbody>
-          </table>
-        </div>
+        <table class="table table-hover align-middle mb-0">
+          <thead>
+            <tr>
+              <th>Date</th>
+              <th>Match</th>
+              <th>Tip</th>
+              <th>Result</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr>
+              <td class="date">2025-11-10</td>
+              <td class="match">Man United vs Arsenal</td>
+              <td class="tip">Over 2.5 Goals</td>
+              <td class="win">WIN</td>
+            </tr>
+            <tr>
+              <td class="date">2025-11-09</td>
+              <td class="match">Barcelona vs Real Madrid</td>
+              <td class="tip">Both Teams to Score</td>
+              <td class="lost">LOST</td>
+            </tr>
+            <tr>
+              <td class="date">2025-11-08</td>
+              <td class="match">Juventus vs AC Milan</td>
+              <td class="tip">Under 2.5 Goals</td>
+              <td class="win">WIN</td>
+            </tr>
+          </tbody>
+        </table>
       </div>
     </div>
 
