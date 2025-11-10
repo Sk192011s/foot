@@ -13,28 +13,22 @@
       border-radius: 16px;
     }
     table {
-      font-size: 13px;
-      table-layout: fixed;
-      width: 100%;
-    }
-    th, td {
-      padding: 4px 6px;
-      white-space: nowrap;
-      text-overflow: ellipsis;
-      overflow: hidden;
+      font-size: 15px;
     }
 
+    /* Win / Lost styles */
     .win {
       font-weight: bold;
-      color: orange;
-      animation: glow 1.5s infinite alternate;
+      color: orange; /* WIN color */
+      animation: glow 1.5s infinite alternate; /* Only WIN has animation */
     }
 
     .lost {
       font-weight: bold;
-      color: red;
+      color: red; /* LOST red text, no animation */
     }
 
+    /* Glow effect for WIN only */
     @keyframes glow {
       0% { text-shadow: 0 0 2px currentColor; }
       50% { text-shadow: 0 0 8px currentColor; }
@@ -43,10 +37,7 @@
 
     @media (max-width: 768px) {
       table {
-        font-size: 12px;
-      }
-      th, td {
-        padding: 2px 4px;
+        font-size: 13px;
       }
     }
   </style>
@@ -85,25 +76,27 @@
                 <td>Juventus vs AC Milan</td>
                 <td>Under 2.5 Goals</td>
                 <td class="win">WIN</td>
+<tr>
+<td>2025-11-08</td>
+<td>Man Utd vs Arsenal</td>
+<td>Arsenal</td>
+<td class="win">WIN</td>
               </tr>
-              <tr>
-                <td>2025-11-08</td>
-                <td>Man Utd vs Arsenal</td>
-                <td>Arsenal</td>
-                <td class="win">WIN</td>
-              </tr>
-              <tr>
-                <td>2025-11-11</td>
-                <td>Napoli vs AC Milan</td>
-                <td>Napoli -0.5</td>
-                <td class="lost">LOST</td>
-              </tr>
+<tr>
+<td>2025-11-11</td>
+<td>Napoli vs AC Milan</td>
+<td>Napoli -0.5</td>
+<td class="lost">LOST</td>
+</tr>
             </tbody>
           </table>
         </div>
       </div>
     </div>
 
+    <p class="text-muted text-center mt-3 small">
+      Update this HTML daily by adding new matches to the table.
+    </p>
   </div>
 </body>
 </html>
