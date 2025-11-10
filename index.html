@@ -15,9 +15,25 @@
     table {
       font-size: 15px;
     }
+    th, td {
+      white-space: nowrap; /* prevent line break in match column */
+    }
+    td.match {
+      min-width: 200px;  /* expand match column */
+    }
+    td.date {
+      min-width: 110px;  /* expand date column */
+    }
+    td.result img {
+      height: 40px;
+      vertical-align: middle;
+    }
     @media (max-width: 768px) {
       table {
         font-size: 13px;
+      }
+      td.result img {
+        height: 30px;
       }
     }
   </style>
@@ -39,24 +55,30 @@
               </tr>
             </thead>
             <tbody>
-              <!-- 🟢 Add your rows here daily -->
+              <!-- Example rows -->
               <tr>
-                <td>2025-11-10</td>
-                <td>Man United vs Arsenal</td>
+                <td class="date">2025-11-10</td>
+                <td class="match">Manchester United vs Arsenal</td>
                 <td>Over 2.5 Goals</td>
-                <td>✅ Win</td>
+                <td class="result">
+                  <img src="https://media.giphy.com/media/111ebonMs90YLu/giphy.gif" alt="Win" title="Win">
+                </td>
               </tr>
               <tr>
-                <td>2025-11-09</td>
-                <td>Barcelona vs Real Madrid</td>
+                <td class="date">2025-11-09</td>
+                <td class="match">Barcelona vs Real Madrid</td>
                 <td>Both Teams to Score</td>
-                <td>❌ Lost</td>
+                <td class="result">
+                  <img src="https://media.giphy.com/media/3o6ZtaO9BZHcOjmErm/giphy.gif" alt="Lost" title="Lost">
+                </td>
               </tr>
               <tr>
-                <td>2025-11-08</td>
-                <td>Juventus vs AC Milan</td>
+                <td class="date">2025-11-08</td>
+                <td class="match">Juventus vs AC Milan</td>
                 <td>Under 2.5 Goals</td>
-                <td>✅ Win</td>
+                <td class="result">
+                  <img src="https://media.giphy.com/media/l0HlQ7LRal0k5UyvO/giphy.gif" alt="Draw" title="Draw">
+                </td>
               </tr>
             </tbody>
           </table>
