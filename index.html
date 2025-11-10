@@ -16,21 +16,19 @@
       font-size: 15px;
     }
 
-    /* Win / Lost animations */
-    .win, .lost {
-      font-weight: bold; /* bold for both */
-      animation: glow 1.5s infinite alternate;
-    }
-
+    /* Win / Lost styles */
     .win {
-      color: orange; /* changed from red to orange */
+      font-weight: bold;
+      color: orange; /* WIN color */
+      animation: glow 1.5s infinite alternate; /* Only WIN has animation */
     }
 
     .lost {
-      color: black;
+      font-weight: bold;
+      color: red; /* LOST red text, no animation */
     }
 
-    /* Glow effect for both */
+    /* Glow effect for WIN only */
     @keyframes glow {
       0% { text-shadow: 0 0 2px currentColor; }
       50% { text-shadow: 0 0 8px currentColor; }
