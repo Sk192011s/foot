@@ -17,32 +17,24 @@
     }
 
     /* Win / Lost animations */
-    .win {
-      font-weight: bold;
-      color: red; /* changed from green */
+    .win, .lost {
+      font-weight: bold; /* bold for both */
       animation: glow 1.5s infinite alternate;
     }
 
-    .lost {
-      font-weight: bold;
+    .win {
       color: red;
-      animation: shake 0.8s infinite;
     }
 
-    /* Glow effect for win */
+    .lost {
+      color: black;
+    }
+
+    /* Glow effect for both */
     @keyframes glow {
-      0% { text-shadow: 0 0 2px #ff0000; }
-      50% { text-shadow: 0 0 8px #ff5555; }
-      100% { text-shadow: 0 0 2px #ff0000; }
-    }
-
-    /* Shake effect for lost */
-    @keyframes shake {
-      0% { transform: translateX(0); }
-      25% { transform: translateX(-3px); }
-      50% { transform: translateX(3px); }
-      75% { transform: translateX(-3px); }
-      100% { transform: translateX(0); }
+      0% { text-shadow: 0 0 2px currentColor; }
+      50% { text-shadow: 0 0 8px currentColor; }
+      100% { text-shadow: 0 0 2px currentColor; }
     }
 
     @media (max-width: 768px) {
