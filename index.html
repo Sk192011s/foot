@@ -15,9 +15,42 @@
     table {
       font-size: 15px;
     }
+
+    /* Win / Lost animations */
+    .win {
+      font-weight: bold;
+      color: green;
+      font-size: 1.2em;
+      animation: pulse 1s infinite;
+    }
+
+    .lost {
+      font-weight: bold;
+      color: red;
+      font-size: 1.2em;
+      animation: shake 0.8s infinite;
+    }
+
+    @keyframes pulse {
+      0% { transform: scale(1); opacity: 1; }
+      50% { transform: scale(1.2); opacity: 0.8; }
+      100% { transform: scale(1); opacity: 1; }
+    }
+
+    @keyframes shake {
+      0% { transform: translateX(0); }
+      25% { transform: translateX(-5px); }
+      50% { transform: translateX(5px); }
+      75% { transform: translateX(-5px); }
+      100% { transform: translateX(0); }
+    }
+
     @media (max-width: 768px) {
       table {
         font-size: 13px;
+      }
+      .win, .lost {
+        font-size: 1em;
       }
     }
   </style>
@@ -39,24 +72,23 @@
               </tr>
             </thead>
             <tbody>
-              <!-- 🟢 Add your rows here daily -->
               <tr>
                 <td>2025-11-10</td>
                 <td>Man United vs Arsenal</td>
                 <td>Over 2.5 Goals</td>
-                <td>✅ Win</td>
+                <td class="win">WIN</td>
               </tr>
               <tr>
                 <td>2025-11-09</td>
                 <td>Barcelona vs Real Madrid</td>
                 <td>Both Teams to Score</td>
-                <td>❌ Lost</td>
+                <td class="lost">LOST</td>
               </tr>
               <tr>
                 <td>2025-11-08</td>
                 <td>Juventus vs AC Milan</td>
                 <td>Under 2.5 Goals</td>
-                <td>✅ Win</td>
+                <td class="win">WIN</td>
               </tr>
             </tbody>
           </table>
